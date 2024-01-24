@@ -1,7 +1,6 @@
 package com.example.datajpamapping.entity;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +18,7 @@ public class Employee {
     private Integer empAge;
 
     @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fk_add_id")
     private Address address;
 
 }
