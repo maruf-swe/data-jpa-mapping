@@ -13,11 +13,14 @@ import java.util.List;
 @RestController
 public class EmployeeController {
 
-    @Autowired
-    private EmployeeRepository employeeRepository;
-    
+    private final EmployeeRepository employeeRepository;
+
+    public EmployeeController(EmployeeRepository employeeRepository) {
+        this.employeeRepository = employeeRepository;
+    }
+
     @PostMapping("/saveEmployee")
-    public ResponseEntity<String> saveEmployee(@RequestBody List<Employee> empData){
+    public ResponseEntity<String> saveEmployee(@RequestBody List<Employee> empData) {
         employeeRepository.saveAll(empData);
         return ResponseEntity.ok("Data Saved");
     }
