@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "add_id")
     private  Long addressId;
     private String city;
     private String addressType;
