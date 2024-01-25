@@ -17,4 +17,6 @@ public class Address {
     private  Long addressId;
     private String city;
     private String addressType;
+    //@OneToOne(mappedBy = "address")
+    //private Employee employee;
 }
